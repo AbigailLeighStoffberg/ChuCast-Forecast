@@ -1,0 +1,10 @@
+
+Weather App Step Planning
+
+- Setup
+- Design
+- HTML
+- CSS
+- Search engine (basic js)
+- Api integration
+- Forecast
