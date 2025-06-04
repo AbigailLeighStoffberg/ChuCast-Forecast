@@ -1,0 +1,80 @@
+body {
+  background-image: url('../images/bgDay.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  color: #351400;
+  font-family: "DynaPuff", system-ui;
+
+}
+
+.weather-app-container {
+   background-color: #EEBBC4;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 50px;
+  border: 3px solid #351400;
+}
+
+
+.weather-app {
+  background-color: #FEFBEC;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 50px;
+  border: 3px solid #351400;
+}
+
+.search-input,
+.submit-button {
+  font-family: "DynaPuff", system-ui;
+  border-radius: 50px;
+  border: 3px solid #351400;
+  padding: 15px;
+  font-size: 30px;
+  
+}
+
+.search-input {
+  background-color: #FEFBEC;
+  color: #AC99AC;
+}
+
+
+.search-input::placeholder {
+color: #AC99AC;
+}
+
+.submit-button {
+ background-color: #EEBBC4
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.description {
+  font-size: 30px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: bold;
+}
+
+.day,
+.weather-desc,
+.humidity-text,
+.wind-text {
+ color: #EEBBC4; /* inside (fill) color */
+  text-shadow:
+  -1px -1px 0 #351400,
+  1px -1px 0 #351400,
+  -1px 1px 0 #351400,
+  1px 1px 0 #351400,
+  0px 1px 0 #351400,
+  1px 0px 0 #351400,
+  0px -1px 0 #351400,
+  -1px 0px 0 #351400;
+}
