@@ -3,11 +3,10 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   color: #351400;
   font-family: "DynaPuff", system-ui;
-
 }
 
 .weather-app-container {
@@ -112,8 +111,10 @@ footer {
  -1px 0px 0 #351400;
  font-size: 30px;
  text-align: center;
- margin: 355px;
+ margin-top: 30px;
 }
+
 a {
  color: #EEBBC4;
 }
+

@@ -1,53 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./src/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <title>Hello, Weather!</title>
+  <meta charset="UTF-8" />
+  <title>Hello, Weather!</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 </head>
-<div class = "weather-app-container">
+
 <body>
-    <div class = "weather-app">
-    <header>
-        <form id = "weather-form" class = "weather-form">
-            <input type ="search" id="search-input" class="search-input" placeholder ="Enter a city...🩷" required/>
-            <input type ="submit" id="submit-button" class="submit-button" value ="Search"/> 
+  <div class="weather-app-container">
+    <div class="weather-app">
+      <header>
+        <form id="weather-form" class="weather-form">
+          <input type="search" id="search-input" class="search-input" placeholder="Enter a city...🩷" required />
+          <input type="submit" id="submit-button" class="submit-button" value="Search" />
         </form>
-    </header>
-    <main>
-    <div class = "weather-app-data">
-    <div>
-    <h1>Paris</h1>
-    <p id = "description" class = "description">
-    <span class="day">Tuesday</span>
-    <span class="time">10:43</span>, 
-    <span class="weather-desc">clear sky</span>
-  <br />
-   <span class="humidity-text">Humidity:</span> <span class="humidity-value">61%</span>, 
-  <span class="wind-text">Wind:</span> <span class="wind-value">4.12 km/h</span>
-    </p>
+      </header>
+
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class = "weather-app-city" id = "city">Paris</h1>
+            <p id="description" class="description">
+              <span class="day">Tuesday</span>
+              <span class="time">10:43</span>, 
+              <span class="weather-desc">clear sky</span><br />
+              <span class="humidity-text">Humidity:</span> <span class="humidity-value">61%</span>, 
+              <span class="wind-text">Wind:</span> <span class="wind-value">4.12 km/h</span>
+            </p>
+          </div>
+
+          <div class="temperature-container">
+            <div class="temperature-emoji">🌞</div>
+            <div class="temperature-value">12</div>
+            <div class="temperature-unit">°C</div>
+          </div>
+        </div>
+      </main>
     </div>
-    <div class="temperature-container">
-    <div class="temperature-emoji">🌞</div>
-    <div class="temperature-value">12</div>
-    <div class="temperature-unit">°C</div>
-    </div>
-    </div>
-    </main>
-    </div>
+  </div>
+
+  <footer>
+    This project was coded by 
+    <a href="https://github.com/AbigailLeighStoffberg" target="_blank">Abigail-Leigh Stoffberg</a> and is open-sourced on 
+    <a href="https://github.com/AbigailLeighStoffberg/ChuCast-Forecast" target="_blank">Github</a> and hosted on 
+    <a href="https://chucastforecast.netlify.app/" target="_blank">Netlify</a>
+  </footer>
+
+  <script src="src/app.js"></script>
 </body>
-</div>
-<footer> 
-        This project was coded by 
-        <a href = "https://github.com/AbigailLeighStoffberg" target="_blank">Abigail-Leigh Stoffberg</a> and is open-sourced on 
-        <a href = "https://github.com/AbigailLeighStoffberg/ChuCast-Forecast" target="_blank">Github</a> and hosted on 
-        <a href = "https://chucastforecast.netlify.app/" target="_blank">Netlify</a>
-    </footer>
 </html>
