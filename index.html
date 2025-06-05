@@ -11,7 +11,31 @@
 </head>
 
 <body>
-  <div class="weather-app-container">
+ <body>
+  <img src="gifs/ducky.gif" alt="ducky" class="animated-sticker duck-gif">
+  <img src="gifs/planty.gif" alt="planty" class="animated-sticker plant-gif">
+    </div>
+  <div class="app-top-bar">
+
+    <div id="calendar" class="day-calendar">
+      <div class="calendar-binder">
+        <span class="binder-bar"></span>
+        <span class="binder-bar"></span>
+        <span class="binder-bar"></span>
+        <span class="binder-bar"></span>
+      </div>
+      <div class="current-day-text" id="current-day-text"></div>
+    </div>
+
+    <h1 class="app-logo-heading">
+      <img src="images/logo.png" alt="Hello, Weather! Logo" class="app-logo-image" />
+      </h1>
+
+    <div id="time" class="time-widget">
+      <div id="digital-clock-display"></div>
+    </div>
+
+  </div> <div class="weather-app-container">
     <div class="weather-app">
       <header>
         <form id="weather-form" class="weather-form">
@@ -23,29 +47,25 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 class = "weather-app-city" id = "city"></h1>
-            <p id= "details" class="weather-details">
-              <span id = "time" class="time"></span>, 
-              <span id = "description" class = "weather-description"></span><br />
-              <span id = "humidity-text" class="humidity-text">Humidity:</span> <span id = "humidity-value" class="humidity-value"></span>, 
-              <span id = "wind-text" class="wind-text">Wind:</span> <span id = "wind-value" class="wind-value"></span>
+            <h2 class="weather-app-city" id="city"></h2>
+            <p id="details" class="weather-details">
+              <span id="description" class="weather-description"></span><br />
+              <span id="humidity-text" class="humidity-text">Humidity:</span> <span id="humidity-value" class="humidity-value"></span>,
+              <span id="wind-text" class="wind-text">Wind:</span> <span id="wind-value" class="wind-value"></span>
             </p>
           </div>
 
           <div class="temperature-container">
-            <div id = "icon"></div>
-            <div id = temperature class="temperature-value"></div>
-            <div id = temperature-unit class="temperature-unit">°C</div>
+            <div id="icon"></div>
+            <div id="temperature" class="temperature-value"></div>
+            <div id="temperature-unit" class="temperature-unit">°C</div>
           </div>
         </div>
       </main>
-    </div>
-  </div>
-
-  <footer>
-    This project was coded by 
-    <a href="https://github.com/AbigailLeighStoffberg" target="_blank">Abigail-Leigh Stoffberg</a> and is open-sourced on 
-    <a href="https://github.com/AbigailLeighStoffberg/ChuCast-Forecast" target="_blank">Github</a> and hosted on 
+    </div> </div> <footer>
+    This project was coded by
+    <a href="https://github.com/AbigailLeighStoffberg" target="_blank">Abigail-Leigh Stoffberg</a> and is open-sourced on
+    <a href="https://github.com/AbigailLeighStoffberg/ChuCast-Forecast" target="_blank">Github</a> and hosted on
     <a href="https://chucastforecast.netlify.app/" target="_blank">Netlify</a>
   </footer>
 
