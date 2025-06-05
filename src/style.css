@@ -26,6 +26,7 @@ body {
   padding: 30px 30px 5px;
   border-radius: 50px;
   border: 3px solid #351400;
+  line-height: 88px;
 }
 
 .search-input,
@@ -47,6 +48,19 @@ body {
 
 .search-input::placeholder {
 color: #AC99AC;
+}
+
+.search-input:-webkit-autofill,
+.search-input:-webkit-autofill:hover,
+.search-input:-webkit-autofill:focus,
+.search-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #FEFBEC inset !important;
+    -webkit-text-fill-color: #AC99AC !important;
+    font-family: "DynaPuff", system-ui !important;
+    font-size: 30px !important;
+    border-radius: 50px !important;
+    border: 3px solid #351400 !important;
+    padding: 15px !important;
 }
 
 .submit-button {
@@ -93,9 +107,16 @@ main {
   justify-content: space-between;
 }
 
+
+.weather-icon {
+ width: 100px;
+ height: auto;
+}
+
 .temperature-container {
   display: flex;
   font-size: 60px;
+  gap: 10px;
 }
 
 footer {
