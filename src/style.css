@@ -17,7 +17,7 @@ body {
 }
 
 .duck-gif {
-  bottom: 5%;
+  bottom: 10%;
   left: 65%;
   width: 800px;
 }
@@ -263,7 +263,7 @@ footer {
    -1px 0px 0 #44251a;
   font-size: 30px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 180px;
 }
 
 a {
