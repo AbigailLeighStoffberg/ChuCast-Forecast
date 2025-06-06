@@ -75,6 +75,17 @@ function handleSearchSubmit(event){
     searchCity(searchInput.value);
 }
 
+function displayForecast() {
+    <div class="forecast-day">
+          <div class="forecast-date">Sat</div>
+          <div class="forecast-icon">🌞</div>
+          <div class="forecast-temperatures">
+            <div class="forecast-temperature-high">35°</div>
+            <div class="forecast-temperature-low">21°</div>
+          </div>
+        </div>
+}
+
 let searchFormElement = document.querySelector("#weather-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
