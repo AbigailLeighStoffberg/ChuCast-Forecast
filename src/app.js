@@ -76,18 +76,29 @@ function handleSearchSubmit(event){
 }
 
 function displayForecast() {
-    <div class="forecast-day">
-          <div class="forecast-date">Sat</div>
-          <div class="forecast-icon">🌞</div>
-          <div class="forecast-temperatures">
-            <div class="forecast-temperature-high">35°</div>
-            <div class="forecast-temperature-low">21°</div>
-          </div>
-        </div>
+    let forecastElement = document.querySelector("#forecast");
+    let days = ["Sat", "Sun", "Mon", "Tue", "Wed",];
+    let forecastHtml = "";
+
+    days.forEach(function(day) {
+        forecastHtml = 
+            forecastHtml +
+            `<div class="forecast-day">
+                <div class="forecast-date">${day}</div>
+                <div class="forecast-icon">🌞</div>
+                <div class="forecast-temperatures">
+                    <div class="forecast-temperature-high">35°</div>
+                    <div class="forecast-temperature-low">21°</div>
+                </div>
+                </div>`;  
+    });
+
+    forecastElement.innerHTML = forecastHtml;
 }
 
 let searchFormElement = document.querySelector("#weather-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Sunnyvale");
+displayForecast();
 
