@@ -198,9 +198,24 @@ body {
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 500;
   margin: 0;
+  margin-top: -20px;
+  margin-bottom: 5px;
+}
+
+.weather-compliment {
+  color: #44251a;
+  text-shadow: none;
+  font-size: 30px;
+
+}
+
+.weather-fallback {
+  color: #44251a;
+  text-shadow: none;
+  font-size: 30px;
 }
 
 .weather-details {
@@ -208,6 +223,8 @@ h2 {
   font-family: "Fredoka", sans-serif;
   font-weight: bold;
   line-height: 40px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .day,
@@ -264,13 +281,14 @@ main {
   font-size: 30px;
   line-height: 20px;
   margin-bottom: 40px;
+  margin-left: -20px;
 }
 
 .forecast-icon {
   text-align: center;
-  font-size: 50px;
-  line-height: 20px;
-
+  height: 80px;
+  line-height: 10px;
+  margin-top: -20px;
 }
 
 .forecast-temperatures {
@@ -278,6 +296,9 @@ main {
   justify-content: center;
   text-align: center;
   font-size: 30px;
+  margin-top: -60px;
+  margin-bottom: -10px;
+  margin-left: -10px;
 
 }
 
@@ -304,7 +325,7 @@ footer {
    -1px 0px 0 #44251a;
   font-size: 30px;
   text-align: center;
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 a {

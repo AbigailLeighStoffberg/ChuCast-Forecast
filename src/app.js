@@ -1,5 +1,17 @@
 // src/app.js
 
+const compliments = {
+  "clear sky": "As bright and beautiful as you. ૮₍´˶• . • ⑅ ₎ა",
+  "few clouds": "Yet nothing can't dim your sunshine. (˵ •̀ ᴗ - ˵ ) ✧",
+  "scattered clouds": "Your potential shines through. ( ◡̀_◡́)ᕤ ",
+  "broken clouds": "Proof that the sun is always there. (づ ᴗ _ᴗ)づ♡",
+  "shower rain": "A quick rinse to make the world sparkle. (❀ˆᴗˆ)(•́ᴗ•̀✿)",
+  "rain": "The perfect excuse to get cozy. (˶ᵔ ᵕ ᵔ˶)",
+  "thunderstorm": "A spectacular show, just for you! (◍•ᴗ•◍)❤",
+  "snow": "Soft and fluffy, just like you. (ෆ˙ᵕ˙ෆ)♡",
+  "mist": "Adding a little mystery to an ordinary day. ₍^. .^₎⟆",
+};
+
 function refreshWeather(response) {
     let temperatureElement = document.querySelector("#temperature");
     let temperature = response.data.temperature.current;
@@ -13,7 +25,19 @@ function refreshWeather(response) {
     let iconPath = `images/icons/${iconCode}.png`;
 
     let currentDayTextElement = document.querySelector("#current-day-text");
-    let digitalClockDisplayElement = document.querySelector("#digital-clock-display"); // For the time
+    let digitalClockDisplayElement = document.querySelector("#digital-clock-display");
+    let description = response.data.condition.description;
+    let descriptionKey = description.toLowerCase();
+    let compliment = compliments[descriptionKey];
+    let finalDescriptionHtml = `<span class="weather-text">${description}.</span>`;
+
+    if (compliment) {
+        finalDescriptionHtml += ` <span class="weather-compliment">${compliment}</span>`;
+        } else {
+        finalDescriptionHtml += ` <span class="weather-fallback">Have a wonderful day! ♡</span>`;
+        }
+
+    descriptionElement.innerHTML = finalDescriptionHtml;
 
     if (currentDayTextElement) {
         currentDayTextElement.innerHTML = formatDate(reportDateTimeObject);
@@ -25,7 +49,7 @@ function refreshWeather(response) {
 
     iconElement.innerHTML = `<img src="${iconPath}" class="weather-icon"/>`;
     cityElement.innerHTML = response.data.city;
-    descriptionElement.innerHTML = response.data.condition.description;
+    descriptionElement.innerHTML = finalDescriptionHtml;
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
     temperatureElement.innerHTML = Math.round(temperature);
@@ -53,7 +77,7 @@ function formatTime(dateObject) {
 }
 
 function searchCity(city) {
-    let apiKey = "o0e08e5bc5b0e4ff55a41bb73c22t77e";
+    let apiKey = "o0e01e5bc5b0e4ff55a41bb73c22t77e";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
     
@@ -77,29 +101,41 @@ function handleSearchSubmit(event){
     searchCity(searchInput.value);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city){
-    let apiKey = "o0e08e5bc5b0e4ff55a41bb73c22t77e"
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKeyey}&units=metric`
+    let apiKey = "o0e01e5bc5b0e4ff55a41bb73c22t77e"
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`
 
     axios(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
-    let days = ["Sat", "Sun", "Mon", "Tue", "Wed",];
     let forecastHtml = "";
+    
 
-    days.forEach(function(day) {
+    response.data.daily.forEach(function(day, index) {
+        if (index < 5) {
+        let iconCode = day.condition.icon;
+        let iconPath = `images/icons/${iconCode}.png`;
+
         forecastHtml = 
             forecastHtml +
             `<div class="forecast-day">
-                <div class="forecast-date">${day}</div>
-                <div class="forecast-icon">🌞</div>
+                <div class="forecast-date">${formatDay(day.time)}</div>
+                <img src="${iconPath}" id = "icon" class="forecast-icon" />
                 <div class="forecast-temperatures">
-                    <div class="forecast-temperature-high">35°</div>
-                    <div class="forecast-temperature-low">21°</div>
+                    <div class="forecast-temperature-high">${Math.round(day.temperature.maximum)}°</div>
+                    <div class="forecast-temperature-low">${Math.round(day.temperature.minimum)}°</div>
                 </div>
-                </div>`;  
+                </div>`;
+        }  
     });
 
     forecastElement.innerHTML = forecastHtml;
