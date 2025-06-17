@@ -2,7 +2,7 @@
 
 const compliments = {
   "clear sky": "As bright and beautiful as you. ૮₍´˶• . • ⑅ ₎ა",
-  "few clouds": "Yet nothing can't dim your sunshine. (˵ •̀ ᴗ - ˵ ) ✧",
+  "few clouds": "Yet nothing can dim your sunshine. (˵ •̀ ᴗ - ˵ ) ✧",
   "scattered clouds": "Your potential shines through. ( ◡̀_◡́)ᕤ ",
   "broken clouds": "Proof that the sun is always there. (づ ᴗ _ᴗ)づ♡",
   "shower rain": "A quick rinse to make the world sparkle. (❀ˆᴗˆ)(•́ᴗ•̀✿)",
